@@ -1,7 +1,7 @@
 import { AbstractResponse } from '../AbstractResponse';
 import { CommentData, CommentReplyData } from '../data/CommentData';
 import { InnerId } from '../data/Common';
-
+import { Paging, PagingData } from '../data/Paging';
 /**
  * Class that represents a response from requests to get the comments on an object.
  *
@@ -10,12 +10,18 @@ import { InnerId } from '../data/Common';
  */
 export class GetObjectCommentsResponse extends AbstractResponse<CommentData[]> {
     /**
+     * The paging of the response.
+     */
+    private readonly paging: Paging;
+
+    /**
      * The constructor.
      *
      * @param body the body of the response.
      */
-    constructor(body: { data: CommentData[] }) {
+    constructor(body: { data: CommentData[]; paging: PagingData }) {
         super(body.data);
+        this.paging = new Paging(body.paging);
     }
 
     /**
@@ -219,5 +225,14 @@ export class GetObjectCommentsResponse extends AbstractResponse<CommentData[]> {
                 return [elem.id, elem.username];
             })
         );
+    }
+
+    /**
+     * Gets the paging of the response.
+     *
+     * @returns the paging of the response.
+     */
+    public getPaging(): Paging {
+        return this.paging;
     }
 }
