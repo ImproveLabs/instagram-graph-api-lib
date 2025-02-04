@@ -60,7 +60,7 @@ describe('AbstractRequest', () => {
     });
 
     it('Adds the range', () => {
-        request.withRange(TestConstants.SINCE, TestConstants.UNTIL);
+        request.withRange(Math.floor(TestConstants.SINCE.getTime() / 1000), Math.floor(TestConstants.UNTIL.getTime() / 1000));
         expect(request.config().params.since).toEqual(TestConstants.SINCE);
         expect(request.config().params.until).toEqual(TestConstants.UNTIL);
     });

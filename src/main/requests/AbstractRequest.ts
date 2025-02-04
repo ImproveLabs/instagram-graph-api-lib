@@ -95,7 +95,7 @@ export abstract class AbstractRequest<R extends AbstractResponse<unknown>> {
      *
      * @returns this request, for use in chain invocation.
      */
-    public withRange(since: Date, until: Date): this {
+    public withRange(since: number, until: number): this {
         this.params.since = since;
         this.params.until = until;
         return this;

@@ -56,7 +56,7 @@ export class GetContentPublishingLimitRequest extends AbstractRequest<GetContent
      * @inheritdoc
      */
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    public withRange(_since: Date, _until: Date): this {
+    public withRange(_since: number, _until: number): this {
         throw new Error('For GetContentPublishingLimitRequest, use "since(date)" instead.');
     }
 

@@ -23,8 +23,8 @@ export interface Params {
     after?: string;
     metric?: string;
     period?: string;
-    since?: Date | number;
-    until?: Date;
+    since?: number;
+    until?: number;
     user_id?: string;
     q?: string;
     message?: string;

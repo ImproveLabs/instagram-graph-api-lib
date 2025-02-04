@@ -40,7 +40,7 @@ describe('GetContentPublishingLimitRequest', () => {
         expect(() => request.addRange(new Date(), new Date())).toThrow(
             new Error('For GetContentPublishingLimitRequest, use "since(date)" instead.')
         );
-        expect(() => request.withRange(new Date(), new Date())).toThrow(
+        expect(() => request.withRange(Math.floor(new Date().getTime() / 1000), Math.floor(new Date().getTime() / 1000))).toThrow(
             new Error('For GetContentPublishingLimitRequest, use "since(date)" instead.')
         );
     });
