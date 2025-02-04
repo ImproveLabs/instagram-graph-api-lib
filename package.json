@@ -1,5 +1,5 @@
 {
-    "name": "instagram-graph-api",
+    "name": "@improvelabs/instagram-graph-api",
     "version": "0.1.0",
     "main": "lib/index.js",
     "types": "lib/Index.d.ts",
