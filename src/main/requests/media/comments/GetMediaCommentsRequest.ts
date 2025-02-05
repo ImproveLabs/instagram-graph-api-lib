@@ -2,6 +2,7 @@ import { CommentField } from '../../../Enums';
 import { GetObjectCommentsResponse } from '../../common/GetObjectCommentsResponse';
 import { AbstractMediaCommentsRequest } from './AbstractMediaCommentsRequest';
 import { CommentData } from '../../data/CommentData';
+import { PagingData } from '../../data/Paging';
 
 /**
  * A request that gets the comments of a media object.
@@ -26,7 +27,7 @@ export class GetMediaCommentsRequest extends AbstractMediaCommentsRequest<GetObj
     /**
      * @inheritdoc
      */
-    protected parseResponse(response: { data: CommentData[] }): GetObjectCommentsResponse {
+    protected parseResponse(response: { data: CommentData[]; paging: PagingData }): GetObjectCommentsResponse {
         return new GetObjectCommentsResponse(response);
     }
 }

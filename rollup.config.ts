@@ -3,7 +3,7 @@ import json from '@rollup/plugin-json';
 import resolve from '@rollup/plugin-node-resolve';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import typescript from 'rollup-plugin-typescript2';
-import { terser } from 'rollup-plugin-terser';
+// import { terser } from 'rollup-plugin-terser';
 
 import packageJson from './package.json';
 
@@ -20,6 +20,7 @@ export default {
         commonjs(),
         json(),
         typescript({ useTsconfigDeclarationDir: true }),
-        terser(),
+        // We removed terser to make it more debuggable
+        // terser(),
     ],
 };

@@ -56,8 +56,8 @@ export class Paging {
      *
      * @param pagingData the paging data.
      */
-    constructor(pagingData: PagingData) {
-        this.pagingData = pagingData;
+    constructor(pagingData: PagingData | undefined) {
+        this.pagingData = pagingData ?? {};
     }
 
     /**
